@@ -37,12 +37,17 @@ def nutritionix_wrapper(label):
     weight = nutritionix_info[weight_key]
     calories = nutritionix_info[calories_key]
 
-    ratio = calories / weight
-    print('{} / {} = {} '.format(calories, weight, ratio))
-    return ratio
+    if weight is not None and calories is not None:
+        print('ME GOOD')
+        ratio = calories / weight
+        return ratio
+
+    print('ME BAD')
+    return 0
+
 
 if __name__ == '__main__':
-    
+
     file_name = 'img/Spaghetti.jpg'
     labels = get_labels_from_image(file_name)
 

@@ -45,6 +45,21 @@ def nutritionix_wrapper(label):
     print('ME BAD')
     return 0
 
+def nutritionix_calories(nutritionix_id):
+    """
+    This function will take an ID and return calories | Useful for the total count of calories per user
+    input: id (string)
+    output: calories (double)
+    """
+    calories_key = 'nf_calories'
+    nutritionix_info = nix.item(id=nutritionix_id).json()
+    calories = nutritionix_info[calories_key]
+    if calories is not None:
+        return calories
+    else:
+        return None
+
+
 
 if __name__ == '__main__':
 

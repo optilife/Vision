@@ -1,0 +1,49 @@
+import io
+from google.cloud import vision
+from nutritionix import Nutritionix
+
+def get_labels_from_image(file_name):
+    """
+    This function will allow the user to get the labels from an image_file.
+    input: file_name of the image
+    output: list of labels (.description or .score of individual label)
+    """
+
+    vision_client = vision.Client()
+
+    with io.open(file_name, 'rb') as image_file:
+        content = image_file.read()
+        image = vision_client.image(content=content)
+
+    labels = image.detect_labels()
+
+    return labels
+
+def nutritionix_wrapper(label):
+    """
+    This function will take a label and give out the weight to calories ratio
+    input: label (string)
+    output: weight / calories (double)
+    """
+    nix = Nutritionix(app_id="8dfdbdb1", api_key="66ad2fcd0f25722ca73662505e9fd492")
+
+    nutritionix_id = nix.search(label, results="0:1").json()['hits'][0]['fields']['item_id']
+
+    nutritionix_info = nix.item(id=nutritionix_id).json()
+
+    weight_key = 'nf_serving_weight_grams'
+    calories_key = 'nf_calories'
+
+    weight = nutritionix_info[weight_key]
+    calories = nutritionix_info[calories_key]
+
+    ratio = calories / weight
+    print('{} / {} = {} '.format(calories, weight, ratio))
+    return ratio
+
+if __name__ == '__main__':
+    
+    file_name = 'img/Spaghetti.jpg'
+    labels = get_labels_from_image(file_name)
+
+    nutritionix_wrapper(labels[0].description)

@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "optilife-180022",
+  "private_key_id": "ab42aeb1f0a36feee7d02f158959888c9097a6dd",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQCufmUQjFnF4iEn\nSiRBHkbpcT2cePJE171PlcsffnHT3AO5mr7nFivA3B+peh7RwksCKem/SKka7AYw\nlma444GJfP++mC0trgOObCELxBfgnYWyZsEeDISPPOB03gLaZ1QwazSR21uV6ZCO\nC9TedTTISNJg3Ap4UkohFr4ELKxNdgq0NNAsX4EmOKDcNpqiAC4MrGRD3PRbfdZv\nmkzTLYx0JpHlg6Lcw/AJqVo+xgB8IrEuoHDhtRWe0lPqg7XCqwrBKZHayNDEpBLV\ndQXxcB8W74N4W1KZ/tA9+To5tCsVHBofvTF0X0kfbwWwoNfkXSYgf1RdsKk8OOnR\n1i9OFWhNAgMBAAECggEAE29hi1fOkfNPVQR1iEk6hbrGrXxtI4zR+aDKCH55aCr7\nwTsCo1N9WRRLdIF1GFDnMN0BO3x41VZPlC7UTyiL34fsJkrl0U4t+DmD7r8PF8YD\nw6ydOt8TDq8touatc60JnAD80HgZuddTcfbQZVyxndM6l246vk8QEaJqVKWzJUde\nlv5VCgTEfKwQ6ZBjcueV1fJlNFNtI8M7Y71YRoa0HlbklNn5uIOIM1fwEdrFpIzD\nedNUpUw3T08+4UvDh76cZ7n3JkqA8rh8CWyQtRwkd3yF4P86Cs1Nld3nZNCvE+jt\nMxDLum7yGxAQr+dOXEfRneEVuzARwUQNR8Z0FGXK0QKBgQDu9GEiSg1z2Hku85KI\nRx87uoxagSryxLj/gdQ7+16Zae6Q6EfuABR568k4dn9uT0bUKuPAcOdIsUEtSH1f\nqpt1FvuKDAA1gN78u/l7c2s/pJOgezw+4C/2BEfNKWgoOeGb2gDXjTkEiNRCs3G2\nbnRJE08Nri3Q13r11cfBbsxouQKBgQC68OBSNscryE0cYkGXmLmbKyLANYfINNIF\nWJvke5uVPcXH3h+TvOt6S2SHEwjqnNxsbxQNRM/0Hms3D+oTRB9cfMR9Lliv1+3h\n3VmWdnvrFfKOU7Cwpkdpn9HkfWrTHyAms14WfRbIYmm9yDWyfkSK2x4oeuBvGVQt\neMubT9CKNQKBgCBME5zo2WyhA7Ae591Xj5cpHbNV5hIuGLsgNylsTlr6AG7BlodK\np3nbLrVc/thQCsi+i04FdJ1Up/SQ6bE2hBCNbK459QVGR91tIslWzlYpznJQddIh\nxxm/dlz6jcNyH1ZLXvXDdsNwIxBo5KO9xiXiYDr/Id4qYco8fOVeLm6xAoGBALLo\njrcAB9OmCe5tNrsgBhozyTlMwdtgedN1/xRHHBpTmTJ0KaJZvr824knHdNQcNXRt\nRjKAtci7R/7Vcz7nBmCcY+wt6+C2dcqg7flrAaN2SMHf5IzbRiMXOmhDg3X0JvAC\n37wEEUbLsMlZj9J4t55woEc7egm5ou812R6V3041AoGBAJ0WKg7RMEf9JOTX1UoQ\nfc/upPShhyaZGQ9dpaJituEQrkkoHUvmj+iJEwCWs8RSMAoEoiThO18IynAO5Wip\n/0oBT70YolNitKgzSUatM+V/WpgQGOeaLm0dRMae4zFvFUVQMW8o5jXXgpCgOjG0\nYmvFDoN8EMvnxuUXD/XH4Zfs\n-----END PRIVATE KEY-----\n",
+  "client_email": "apioptilife@optilife-180022.iam.gserviceaccount.com",
+  "client_id": "107022826585403489289",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://accounts.google.com/o/oauth2/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/apioptilife%40optilife-180022.iam.gserviceaccount.com"
+}

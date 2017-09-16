@@ -25,9 +25,9 @@ def nutritionix_wrapper(label):
     input: label (string)
     output: weight / calories (double)
     """
-    nix = Nutritionix(app_id="8dfdbdb1", api_key="66ad2fcd0f25722ca73662505e9fd492")
 
-    nutritionix_id = nix.search(label, results="0:1").json()['hits'][0]['fields']['item_id']
+
+    nutritionix_id = nutritionix_ID(label)
 
     nutritionix_info = nix.item(id=nutritionix_id).json()
 
@@ -45,13 +45,26 @@ def nutritionix_wrapper(label):
     print('ME BAD')
     return 0
 
+def nutritionix_ID(label):
+    """
+    This function will give the first product ID for a specific label
+    input: label (string)
+    output: ID (string)
+    """
+    nix = Nutritionix(app_id="8dfdbdb1", api_key="66ad2fcd0f25722ca73662505e9fd492")
+
+    return nix.search(label, results="0:1").json()['hits'][0]['fields']['item_id']
+
 def nutritionix_calories(nutritionix_id):
     """
     This function will take an ID and return calories | Useful for the total count of calories per user
     input: id (string)
-    output: calories (double)
+    output: calories
     """
+    nix = Nutritionix(app_id="8dfdbdb1", api_key="66ad2fcd0f25722ca73662505e9fd492")
+
     calories_key = 'nf_calories'
+
     nutritionix_info = nix.item(id=nutritionix_id).json()
     calories = nutritionix_info[calories_key]
     if calories is not None:
@@ -59,6 +72,36 @@ def nutritionix_calories(nutritionix_id):
     else:
         return None
 
+def health_score(**options):
+    """
+    This function will return a health score based on multiple informations concerning the user
+    input: weigth, height, age, gender, total_calories_day (in DB)
+    output: health_score
+    """
+    BMI = options['weight'] / options['height']
+    if BMI < 18.5:
+        BMI_weight = 1
+    elif BMI >= 18.5 and BMI < 25:
+        BMI_weight = 0
+    elif BMI >= 25 and BMI < 30:
+        BMI_weight = 1
+    elif BMI >= 30 and BMI < 40:
+        BMI_weight = 2
+    else:
+        BMI_weight = 3
+
+    if options['total_calories_day']:
+        calories = options['total_calories_day']
+        if options['gender'] == 'male':
+            BMR=66.47+ (13.75 x options['weight']) + (5.0 x options['height']) - (6.75 x options['age'])
+        elif options['gender'] == 'female':
+            BMR=665.09 + (9.56 x options['weight']) + (1.84 x options['height']) - (4.67 x options['age'])
+        ratio = BMR / calories
+        if ratio > 1:
+            return 80 - BMI_weight * 20 + 20 * (BMR / total_calories_day)
+        else:
+            return 60 - BMI_weight * 20 + 40 * (BMR / total_calories_day)
+    return 100 - BMI_weight * 20
 
 
 if __name__ == '__main__':

@@ -95,7 +95,7 @@ def health_score(**options):
         if options['gender'] == 'male':
             BMR=66.47+ (13.75 x options['weight']) + (5.0 x options['height']) - (6.75 x options['age'])
         elif options['gender'] == 'female':
-            BMR=665.09 + (9.56 x options['weight']) + (1.84 x options['height']) - (4.67 x options['age'])
+            BMR=65.09 + (9.56 x options['weight']) + (1.84 x options['height']) - (4.67 x options['age'])
         ratio = BMR / calories
         if ratio > 1:
             return 80 - BMI_weight * 20 + 20 * (BMR / total_calories_day)

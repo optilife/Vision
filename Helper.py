@@ -2,7 +2,7 @@ import io
 from google.cloud import vision
 from nutritionix import Nutritionix
 
-def get_labels_from_image(file_name):
+def get_labels_from_image(image):
     """
     This function will allow the user to get the labels from an image_file.
     input: file_name of the image
@@ -11,9 +11,7 @@ def get_labels_from_image(file_name):
 
     vision_client = vision.Client()
 
-    with io.open(file_name, 'rb') as image_file:
-        content = image_file.read()
-        image = vision_client.image(content=content)
+    image = vision_client.image(content=image)
 
     labels = image.detect_labels()
 
